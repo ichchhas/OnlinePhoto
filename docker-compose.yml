@@ -1,0 +1,22 @@
+version: '3'
+services:
+  online-photography.pv:
+    container_name: online-photography.pv
+    image: pagevamp/nginx-php7-fpm:7.2
+    restart: always
+    env_file: .env
+    environment:
+      - VIRTUAL_HOST=online-photography.pv
+    volumes:
+      - ./:/var/www
+      - ./docker/sites/default.conf:/etc/nginx/sites-enabled/default
+    networks:
+      - pagevamp
+
+networks:
+  pagevamp:
+    external: true
+
+volumes:
+  CacheVolume:
+    external: true
