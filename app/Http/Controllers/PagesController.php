@@ -17,4 +17,25 @@ class PagesController extends Controller
     {
         return view('frontend.index');
     }
+
+    public function contest()
+    {
+        return view('frontend.contest');
+    }
+
+    public function exhibition()
+    {
+        return view('frontend.exhibition');
+    }
+
+    public function winner()
+    {
+        return view('frontend.winner');
+    }
+
+    public function dash()
+    {
+        return view('backend.dash');
+    }
+
 }
